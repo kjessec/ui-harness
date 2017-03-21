@@ -40,7 +40,7 @@ export const closestModulePath = (moduleDir, moduleName) => {
   }
   // Not found, walk up the folder-hierarhcy.
   const parent = fsPath.resolve(moduleDir, '..');
-  if (parent !== '/') {
+  if (parent !== fsPath.resolve('/')) {
     return closestModulePath(parent, moduleName); // <== RECURSION.
   }
   return undefined;
