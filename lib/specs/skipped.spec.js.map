@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/specs/skipped.spec.js"],"names":["describe","it"],"mappings":";;AAEAA,SAAS,SAAT,EAAoB,YAAW;AAC7BC,KAAG,cAAH,EAAmB,YAAM;AACvB;AACD,GAFD;AAGD,CAJD","file":"skipped.spec.js","sourcesContent":["\r\n\r\ndescribe('Skipped', function() {\r\n  it('skipped spec', () => {\r\n    // 1 + 1; // No-op.\r\n  });\r\n});\r\n"]}

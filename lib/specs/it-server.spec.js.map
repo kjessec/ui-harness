@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/specs/it-server.spec.js"],"names":[],"mappings":";AACA;AACA;AACA;AACA;AACA;AACA","file":"it-server.spec.js","sourcesContent":["\r\n// describe('BDD', function() {\r\n//   section('it.server', () => {\r\n//     let spec = it.server('`foo`', (text = 'foo', number) => {});\r\n//     it('normal', () => {});\r\n//   });\r\n// });\r\n"]}

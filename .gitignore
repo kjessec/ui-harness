@@ -1,6 +1,6 @@
 .DS_Store
 .build
-lib
+//lib
 node_modules
 npm-debug.log
 test/.temp
