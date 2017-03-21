@@ -122,7 +122,7 @@ export default (options = {}) => {
 
       // [Moment.js] only load subset of locales to reduce size.
       //    See - http://stackoverflow.com/a/25426019/1745661
-      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
+      new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/),
 
       // Break out common libs into their own code-chunk.
       //    See - https://webpack.github.io/docs/code-splitting.html#split-app-and-vendor-code
@@ -139,7 +139,11 @@ export default (options = {}) => {
     cssModules.forEach(test => {
       loaders.push({
         test,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', // eslint-disable-line max-len
+        loaders: [
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'postcss',
+        ],
         exclude: /node_modules/,
 
         // Loader syntax below from:
@@ -150,6 +154,8 @@ export default (options = {}) => {
       }
     });
 
+    // added: postcss plugins for webpack1
+    config.postcss = () => [require('precss'), require('autoprefixer')];
 
     // Add the simple CSS loader if the extension was not included for css-module's.
     if (!simpleLoaderAdded) {
