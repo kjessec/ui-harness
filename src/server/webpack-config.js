@@ -101,6 +101,9 @@ export default (options = {}) => {
         typescriptLoader(/\.tsx?$/, isRelayEnabled),
         { test: /\.json$/, loader: 'json' },
         { test: /\.(png|svg)$/, loader: 'url-loader' },
+
+        // kjessec; font loader
+        { test: /\.woff$/, loader: 'url?mimetype=application/octet-stream&name=public/fonts/[name].[ext]' },
       ],
     },
     devtool: isProduction ? undefined : 'cheap-module-eval-source-map',
